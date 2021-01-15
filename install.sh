@@ -40,4 +40,7 @@ tmux set-environment -g TMUX_PLUGIN_MANAGER_PATH "~/.tmux/plugins"
 "$HOME"/.tmux/plugins/tpm/bin/install_plugins || true
 tmux kill-session -t __noop >/dev/null 2>&1 || true
 
+printf "Patch online status plugin\n"
+perl -i -pe 's/google.com/baidu.com/g' ~/.tmux/plugins/tmux-online-status/scripts/online_status_icon.sh
+
 printf "OK: Completed\n"
